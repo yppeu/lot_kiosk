@@ -6,270 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-
-
-    <style>
-        body {
-            text-align: center;
-            margin: 100px;
-            font-size: x-large;
-        }
-
-        /* #id, #pw {
-        margin: 30px;
-    } */
-
-        #slogan {
-            margin: 50px;
-        }
-
-        #burger,
-        #snack,
-        #drink {
-            margin: 20px;
-        }
-    </style>
-
-
-
-    <script>
-        // 물품 - (버거,스낵,음료)이름, 가격
-        var Product = {
-            name: '',
-            price: 0,
-            count: 0
-        };
-
-        // 선택한 데이터 리스트
-        var ProductList = [];
-
-        // 체크박스 체크 시, productList에 데이터 추가, 또는 삭제
-        function getCheckboxValue(e) {
-            //debugger;
-            switch (e.target.id) {
-                case 'bul':
-                    ConfCheck(e.target.checked, '불고기버거', 1000);
-                    break;
-
-                case 'shrimp':
-                    ConfCheck(e.target.checked, '새우버거', 2000);
-                    break;
-
-                case 'cow':
-                    ConfCheck(e.target.checked, '한우버거', 3000);
-                    break;
-
-                case 'cheese':
-                    ConfCheck(e.target.checked, '치즈스틱', 4000);
-                    break;
-
-                case 'potato':
-                    ConfCheck(e.target.checked, '양념감자', 5000);
-                    break;
-
-                case 'tornado':
-                    ConfCheck(e.target.checked, '토네이도', 6000);
-                    break;
-
-                case 'coke':
-                    ConfCheck(e.target.checked, '콜라', 7000);
-                    break;
-
-                case 'cider':
-                    ConfCheck(e.target.checked, '사이다', 8000);
-                    break;
-
-                case 'juice':
-                    ConfCheck(e.target.checked, '쥬스', 9000);
-                    break;
-
-            }
-            console.log(ProductList);
-        }
-
-
-
-        function ConfCheck(checked, name, price) {
-            if (checked) {
-                var newProduct = {};
-                newProduct.name = name;
-                newProduct.price = price;
-                ProductList = ProductList.concat(newProduct);
-                //console.log(ProductList);
-                //console.log(JSON.stringify(ProductList));
-                //alert(newProduct.name);
-            } else {
-                ProductList = ProductList.filter(function (product) {
-                    return product.name !== name;
-                });
-            }
-        }
-
-
-        // 제품 갯수 설정
-        function count(type) {
-
-            const resultElement = document.getElementById('countresult');
-            let number = resultElement.innerText;
-
-            if (type == 'plus') {
-                number = Number(number) + 1;
-            } else if (type == 'minus') {
-                if (number > 0) {
-                    number = Number(number) - 1;
-                }
-            }
-            resultElement.innerText = number;
-        }
-
-
-
-        // 장바구니 출력 함수
-        function select() {
-
-            let nameresult = '';
-            let priceresult = '';
-
-            let cntresult = document.getElementById('countresult').innerText;
-
-            for (i = 0; i < ProductList.length; i++) {
-                console.log(ProductList[i])
-                nameresult = nameresult + ProductList[i].name;
-                priceresult = priceresult + ProductList[i].price;
-
-                if(Number(cntresult) > 0){
-                    document.getElementById('content').innerText = '상품 : ' + nameresult + ' / ' + '수량 : ' + cntresult + ' / ' + '가격 : ' + priceresult + '\n';
-                }else{
-                    alert('개수를 선택해주세요.');
-                }
-            }
-        }
-
-
-
-        // 장바구니 담기
-        function cart() {
-            select();
-            let chk = document.querySelectorAll("input[type='radio']");
-            chk.forEach(item => {
-                item.checked = false;
-            });
-            
-        }
-
-
-        // 결제
-        function pay() {
-            unchecked();
-            alert('결제가 완료되었습니다.');
-            document.getElementById('content').innerText = '';
-            document.getElementById('countresult').innerText = '';
-        }
-
-
-        // 취소
-        function unchecked() {
-            //debugger;
-            let chk = document.querySelectorAll("input[type='checkbox']");
-            chk.forEach(item => {
-                item.checked = false;
-                ProductList = []; // 타입 맞춰주기
-                document.getElementById('content').innerText = '';
-                document.getElementById('countresult').innerText = '';
-            });
-        }
-
-
-
-        function cancle() {
-            unchecked();
-        }
-
-
-
-
-
-
-
-    </script>
+    <link rel="stylesheet" href="lot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Sunflower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
     <div>
-        <div id='slogan'>(oﾟvﾟ)ノ 롯데리아에 오신 걸 환영합니다. (oﾟvﾟ)ノ</div>
+        <div id='slogan'>안녕하세요.<br>롯데리아입니다.<br> (❁´◡`❁)</div>
 
         <form action="">
             <div id='burger'>
-                <div>
-                    <input id='bul' type='radio' onchange='getCheckboxValue(event)' /><label for="bul">불고기버거</label>
-                </div>
-
-                <div>
-                    <input id='shrimp' type='radio' onchange='getCheckboxValue(event)' /><label
-                        for="shrimp">새우버거</label>
-                </div>
-
-                <div>
-                    <input id='cow' type='radio' onchange='getCheckboxValue(event)' /><label for="cow">한우버거</label>
-                </div>
-
+                <h3>버거</h3>
+                <input id='bul' type='checkbox' onchange='getCheckboxValue(event)' /><label for="bul">불고기버거</label>
+                <input id='shrimp' type='checkbox' onchange='getCheckboxValue(event)' /><label for="shrimp">새우버거</label>
+                <input id='cow' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cow">한우버거</label>
             </div>
 
             <div id='snack'>
-                <div>
-                    <input id='cheese' type='radio' onchange='getCheckboxValue(event)' /><label
-                        for="cheese">치즈스틱</label>
-                </div>
-
-
-                <div>
-                    <input id='potato' type='radio' onchange='getCheckboxValue(event)' /><label
-                        for="potato">양념감자</label>
-                </div>
-
-                <div>
-                    <input id='tornado' type='radio' onchange='getCheckboxValue(event)' /><label
-                        for="tornado">토네이도</label>
-                </div>
+                <h3>스낵</h3>
+                <input id='cheese' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cheese">치즈스틱</label>
+                <input id='potato' type='checkbox' onchange='getCheckboxValue(event)' /><label for="potato">양념감자</label>
+                <input id='tornado' type='checkbox' onchange='getCheckboxValue(event)' /><label for="tornado">토네이도</label>
             </div>
 
-
             <div id='drink'>
-                <div>
-                    <input id='coke' type='radio' onchange='getCheckboxValue(event)' /><label for="coke">콜라</label>
-                </div>
-
-                <div>
-                    <input id='cider' type='radio' onchange='getCheckboxValue(event)' /><label
-                        for="cider">사이다</label>
-                </div>
-
-                <div>
-                    <input id='juice' type='radio' onchange='getCheckboxValue(event)' /><label
-                        for="juice">오렌지쥬스</label>
-                </div>
-
-
+                <h3>음료</h3>
+                <input id='coke' type='checkbox' onchange='getCheckboxValue(event)' /><label for="coke">콜라</label>
+                <input id='cider' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cider">사이다</label>
+                <input id='juice' type='checkbox' onchange='getCheckboxValue(event)' /><label for="juice">오렌지쥬스</label>
             </div>
         </form>
 
         <div>
-            <input type='button' onclick='count("plus")' value='+' />
-            <input type='button' onclick='count("minus")' value='-' />
+            <input type='button' onclick='counts("plus")' value='+' />
+            <input type='button' onclick='counts("minus")' value='-' />
         </div>
 
-        <div id='countresult'>1</div>
+        <div id='countresult'></div>
 
         <input id='cart' type='button' value='장바구니 담기' onclick="cart()" />
         <input id='pay' type='button' value='결제' onclick="pay()" />
         <input id='cancle' type='button' value='취소' onclick="cancle()" />
+        <div id='total'></div>
 
         <div id='content'></div>
-
-
+        <script src="lot.js" charset="utf-8"></script>
     </div>
 </body>
+
 
 </html>
