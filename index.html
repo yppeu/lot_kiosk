@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Sunflower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <div>
+        <div id='slogan'>안녕하세요.<br>롯데리아입니다.<br> (❁´◡`❁)</div>
+
+        <form action="">
+            <div id='burger'>
+                <h3>버거</h3>
+                <input id='bul' type='checkbox' onchange='getCheckboxValue(event)' /><label for="bul">불고기버거</label>
+                <input id='shrimp' type='checkbox' onchange='getCheckboxValue(event)' /><label for="shrimp">새우버거</label>
+                <input id='cow' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cow">한우버거</label>
+            </div>
+
+            <div id='snack'>
+                <h3>스낵</h3>
+                <input id='cheese' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cheese">치즈스틱</label>
+                <input id='potato' type='checkbox' onchange='getCheckboxValue(event)' /><label for="potato">양념감자</label>
+                <input id='tornado' type='checkbox' onchange='getCheckboxValue(event)' /><label for="tornado">토네이도</label>
+            </div>
+
+            <div id='drink'>
+                <h3>음료</h3>
+                <input id='coke' type='checkbox' onchange='getCheckboxValue(event)' /><label for="coke">콜라</label>
+                <input id='cider' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cider">사이다</label>
+                <input id='juice' type='checkbox' onchange='getCheckboxValue(event)' /><label for="juice">오렌지쥬스</label>
+            </div>
+        </form>
+
+        <div>
+            <input type='button' onclick='counts("plus")' value='+' />
+            <input type='button' onclick='counts("minus")' value='-' />
+        </div>
+
+        <div id='countresult'></div>
+
+        <input id='cart' type='button' value='장바구니 담기' onclick="cart()" />
+        <input id='pay' type='button' value='결제' onclick="pay()" />
+        <input id='cancle' type='button' value='취소' onclick="cancle()" />
+        <div id='total'></div>
+
+        <div id='content'></div>
+        <script src="lot.js" charset="utf-8"></script>
+    </div>
+</body>
+
+
+</html>
