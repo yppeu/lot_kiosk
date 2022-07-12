@@ -1,0 +1,33 @@
+label{
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Sunflower', sans-serif;
+    font-size: 16px;
+}
+
+
+body {
+    text-align: center;
+    margin: 100px;
+    font-size: x-large;
+    background-color: pink;
+}
+
+#slogan {
+    margin: 50px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 40px;
+}
+
+#burger,
+#snack,
+#drink {
+    margin: 15px;
+}
+
+#content{
+    font-size: 15px;
+}
+
+#total{
+    margin: 10px;
+}
