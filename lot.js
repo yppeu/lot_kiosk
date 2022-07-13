@@ -64,8 +64,17 @@ function ConfCheck(checked, name, price, count) {
         newProduct.price = price;
         newProduct.count = count;
 
-        let resultBt = document.createElement('button onclick='counts("plus")' value=+ ');
-        resultBt.innerHTML = 
+        
+        let resultBt = document.createElement('button');
+        console.log(resultBt);
+        resultBt.onclick = function(){
+            counts('plus');
+        };
+        resultBt.onclick = function(){
+            counts('min');
+        };
+        document.getElementById('countresult');
+
 
         ProductList = ProductList.concat(newProduct);
         //console.log(ProductList);
