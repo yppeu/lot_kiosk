@@ -31,3 +31,43 @@ body {
 #total{
     margin: 10px;
 }
+
+#plusminBT{
+    display: none;
+}
+
+.button{
+    margin: 5px 0 5px 0;
+    padding: 10px 15px 10px 15px;
+    background-color: white;
+    border-style: none;
+    border-radius:100px;
+    color: palevioletred;
+}
+
+.button:hover{
+    margin: 5px 0 5px 0;
+    padding: 10px 15px 10px 15px;
+    background-color:pink;
+    color:white;
+    border-style: solid;
+    border-color: white;
+}
+
+.plus, .minus{
+    margin: 15px 0 15px 0;
+    padding: 10px 15px 10px 15px;
+    background-color: white;
+    border-style: none;
+    border-radius:100px;
+    color: palevioletred;
+}
+
+.plus:hover, .minus:hover{
+    margin: 15px 0 15px 0;
+    padding: 10px 15px 10px 15px;
+    background-color:pink;
+    color:white;
+    border-style: solid;
+    border-color: white;
+}
