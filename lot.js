@@ -5,7 +5,6 @@ var Product = {
     count: 0
 };
 
-
 // 선택한 데이터 리스트
 var ProductList = [];
 
@@ -13,47 +12,56 @@ var ProductList = [];
 var ProductPay = [];
 
 // 체크박스 체크 시, productList에 데이터 추가, 또는 삭제
-function getCheckboxValue(e) {
-    //debugger;
-    switch (e.target.id) {
-        case 'bul':
-            ConfCheck(e.target.checked, '불고기버거', 2000, 0);
-            break;
+function getradioValue(e) {
+    // 개수를 선택하기 위해 카운트 버튼 표시 처리
+    document.getElementById('plusminBT').style.display = 'block';
+    document.getElementById('countresult').innerText = Number(0);
 
-        case 'shrimp':
-            ConfCheck(e.target.checked, '새우버거', 2000, 0);
-            
-            break;
-
-        case 'cow':
-            ConfCheck(e.target.checked, '한우버거', 6500, 0);
-            break;
-
-        case 'cheese':
-            ConfCheck(e.target.checked, '치즈스틱', 1600, 0);
-            break;
-
-        case 'potato':
-            ConfCheck(e.target.checked, '양념감자', 1600, 0);
-            break;
-
-        case 'tornado':
-            ConfCheck(e.target.checked, '토네이도', 1400, 0);
-            break;
-
-        case 'coke':
-            ConfCheck(e.target.checked, '콜라', 1200, 0);
-            break;
-
-        case 'cider':
-            ConfCheck(e.target.checked, '사이다', 1200, 0);
-            break;
-
-        case 'juice':
-            ConfCheck(e.target.checked, '오렌지쥬스', 1500, 0);
-            break;
+        switch (e.target.id) {
+            case 'bul':
+                ConfCheck(e.target.checked, '불고기버거', 2000, 0);
+                break;
+    
+            case 'shrimp':
+                ConfCheck(e.target.checked, '새우버거', 2000, 0);
+                break;
+    
+            case 'cow':
+                ConfCheck(e.target.checked, '한우버거', 6500, 0);
+                break;
+    
+            case 'cheese':
+                ConfCheck(e.target.checked, '치즈스틱', 1600, 0);
+                break;
+    
+            case 'potato':
+                ConfCheck(e.target.checked, '양념감자', 1600, 0);
+                break;
+    
+            case 'tornado':
+                ConfCheck(e.target.checked, '토네이도', 1400, 0);
+                break;
+    
+            case 'coke':
+                ConfCheck(e.target.checked, '콜라', 1200, 0);
+                break;
+    
+            case 'cider':
+                ConfCheck(e.target.checked, '사이다', 1200, 0);
+                break;
+    
+            case 'juice':
+                ConfCheck(e.target.checked, '오렌지쥬스', 1500, 0);
+                break;
+        }
     }
-}
+
+    // function resetRadioBT(){
+
+    //     if('input[type=radio]'.checked){
+    //         e.target.checked = false;
+    //     }
+    // }
 
 
 // Product 제품 연결해서 ProductList 배열에 삽입
@@ -64,17 +72,9 @@ function ConfCheck(checked, name, price, count) {
         newProduct.price = price;
         newProduct.count = count;
 
-        
-        let resultBt = document.createElement('button');
-        console.log(resultBt);
-        resultBt.onclick = function(){
-            counts('plus');
-        };
-        resultBt.onclick = function(){
-            counts('min');
-        };
-        document.getElementById('countresult');
-
+        // resultbt1.addEventListener(function counts(){
+        //     resultbt1.addEventListener('click',counts) 
+        // });
 
         ProductList = ProductList.concat(newProduct);
         //console.log(ProductList);
@@ -88,11 +88,10 @@ function ConfCheck(checked, name, price, count) {
 }
 
 
-
 // 제품 갯수 설정
 function counts(type) {
+    
     let resultElement = document.getElementById('countresult');
-    //let number = resultElement.innerText;
     if (type == 'plus') {
         Product.count = Product.count + 1;
     } else if (type == 'minus') {
@@ -131,13 +130,17 @@ function select() {
 
 // 장바구니 담기
 function cart() {
-    select();
-    let chk = document.querySelectorAll("input[type='checkbox']");
-    chk.forEach(item => {
-        item.checked = false;
-    });
-
+    if(product.count != 0){
+        select();
+        let chk = document.querySelectorAll("input[type='radio']");
+        chk.forEach(item => {
+            item.checked = false;
+        });
+    }else{
+        alert('개수를 선택해주세요.');
+    }
 }
+
 
 
 // 결제
@@ -149,12 +152,14 @@ function pay() {
 }
 
 
+
 // 취소
 function unchecked() {
     //debugger;
-    let chk = document.querySelectorAll("input[type='checkbox']");
+    let chk = document.querySelectorAll("input[type='radio']:checked");
     chk.forEach(item => {
         item.checked = false;
+        document.getElementById('plusminBT').style.display = 'none';
         ProductList = []; // 타입 맞춰주기
         document.getElementById('content').innerText = '';
         document.getElementById('countresult').innerText = '';
