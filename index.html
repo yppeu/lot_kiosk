@@ -14,44 +14,48 @@
 
 <body>
     <div>
-        <div id='slogan'>안녕하세요.<br>롯데리아입니다.<br> (❁´◡`❁)</div>
+        <div id='popup'></div>
+        <div id='slogan'>BURGERKING</div>
 
         <form action="">
             <div id='burger'>
                 <h3>버거</h3>
-                <input id='bul' type='checkbox' onchange='getCheckboxValue(event)' /><label for="bul">불고기버거</label>
-                <input id='shrimp' type='checkbox' onchange='getCheckboxValue(event)' /><label for="shrimp">새우버거</label>
-                <input id='cow' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cow">한우버거</label>
+                <input id='bul' type='radio' onchange='getradioValue(event)' name='burger' /><label for="bul">불고기버거</label>
+                <input id='shrimp' type='radio' onchange='getradioValue(event)' name='burger' /><label for="shrimp">새우버거</label>
+                <input id='cow' type='radio' onchange='getradioValue(event)' name='burger' /><label for="cow">한우버거</label>
             </div>
 
             <div id='snack'>
                 <h3>스낵</h3>
-                <input id='cheese' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cheese">치즈스틱</label>
-                <input id='potato' type='checkbox' onchange='getCheckboxValue(event)' /><label for="potato">양념감자</label>
-                <input id='tornado' type='checkbox' onchange='getCheckboxValue(event)' /><label for="tornado">토네이도</label>
+                <input id='cheese' type='radio' onchange='getradioValue(event)' name='snack' /><label for="cheese">치즈스틱</label>
+                <input id='potato' type='radio' onchange='getradioValue(event)' name='snack' /><label for="potato">양념감자</label>
+                <input id='tornado' type='radio' onchange='getradioValue(event)' name='snack' /><label for="tornado">토네이도</label>
             </div>
 
             <div id='drink'>
                 <h3>음료</h3>
-                <input id='coke' type='checkbox' onchange='getCheckboxValue(event)' /><label for="coke">콜라</label>
-                <input id='cider' type='checkbox' onchange='getCheckboxValue(event)' /><label for="cider">사이다</label>
-                <input id='juice' type='checkbox' onchange='getCheckboxValue(event)' /><label for="juice">오렌지쥬스</label>
+                <input id='coke' type='radio' onchange='getradioValue(event)' name='drink' /><label for="coke">콜라</label>
+                <input id='cider' type='radio' onchange='getradioValue(event)' name='drink' /><label for="cider">사이다</label>
+                <input id='juice' type='radio' onchange='getradioValue(event)' name='drink' /><label for="juice">오렌지쥬스</label>
             </div>
         </form>
 
-        <div>
-            <input type='button' onclick='counts("plus")' value='+' />
-            <input type='button' onclick='counts("minus")' value='-' />
+        <div id="plusminBT">
+            <input class="plus" type='button' onclick='counts("plus")' value='+' />
+            <input class="minus" type='button' onclick='counts("minus")' value='-' />
         </div>
 
+        <!-- 제품 갯수 결과값 -->
         <div id='countresult'></div>
 
-        <input id='cart' type='button' value='장바구니 담기' onclick="cart()" />
-        <input id='pay' type='button' value='결제' onclick="pay()" />
-        <input id='cancle' type='button' value='취소' onclick="cancle()" />
+        <input class="button" id='cart' type='button' value='장바구니 담기' onclick="cart()" />
+        <input class="button" id='pay' type='button' value='결제' onclick="pay()" />
+        <input class="button" id='cancle' type='button' value='취소' onclick="cancle()" />
         <div id='total'></div>
 
+        <!-- 제품 선택 내용 -->
         <div id='content'></div>
+
         <script src="lot.js" charset="utf-8"></script>
     </div>
 </body>
