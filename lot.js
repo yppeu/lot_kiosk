@@ -1,3 +1,21 @@
+
+// 로고 타이핑 효과
+const content = "고객님 환영합니다!";
+const text = document.querySelector("#popup");
+text.style.margin = '0 50px 50px 50px';
+let index = 0;
+
+function typing() {
+    text.textContent = text.textContent + content[index++];
+    if (index > content.length) {
+        text.textContent = ""
+    }
+}
+setInterval(typing, 200);
+clearInterval(typing);
+
+
+
 // 물품 - (버거,스낵,음료)이름, 가격 -> 오브젝트 생성
 var Product = {
     name: '',
@@ -9,59 +27,55 @@ var Product = {
 var ProductList = [];
 
 // 결제용 리스트
-var ProductPay = [];
+var CartSubmit = [];
+
+
 
 // 체크박스 체크 시, productList에 데이터 추가, 또는 삭제
 function getradioValue(e) {
     // 개수를 선택하기 위해 카운트 버튼 표시 처리
     document.getElementById('plusminBT').style.display = 'block';
     document.getElementById('countresult').innerText = Number(0);
+    Product.count = 0;
+    switch (e.target.id) {
+        case 'bul':
+            ConfCheck(e.target.checked, '불고기버거', 2000, 0);
+            break;
 
-        switch (e.target.id) {
-            case 'bul':
-                ConfCheck(e.target.checked, '불고기버거', 2000, 0);
-                break;
-    
-            case 'shrimp':
-                ConfCheck(e.target.checked, '새우버거', 2000, 0);
-                break;
-    
-            case 'cow':
-                ConfCheck(e.target.checked, '한우버거', 6500, 0);
-                break;
-    
-            case 'cheese':
-                ConfCheck(e.target.checked, '치즈스틱', 1600, 0);
-                break;
-    
-            case 'potato':
-                ConfCheck(e.target.checked, '양념감자', 1600, 0);
-                break;
-    
-            case 'tornado':
-                ConfCheck(e.target.checked, '토네이도', 1400, 0);
-                break;
-    
-            case 'coke':
-                ConfCheck(e.target.checked, '콜라', 1200, 0);
-                break;
-    
-            case 'cider':
-                ConfCheck(e.target.checked, '사이다', 1200, 0);
-                break;
-    
-            case 'juice':
-                ConfCheck(e.target.checked, '오렌지쥬스', 1500, 0);
-                break;
-        }
+        case 'shrimp':
+            ConfCheck(e.target.checked, '새우버거', 2000, 0);
+            break;
+
+        case 'cow':
+            ConfCheck(e.target.checked, '한우버거', 6500, 0);
+            break;
+
+        case 'cheese':
+            ConfCheck(e.target.checked, '치즈스틱', 1600, 0);
+            break;
+
+        case 'potato':
+            ConfCheck(e.target.checked, '양념감자', 1600, 0);
+            break;
+
+        case 'tornado':
+            ConfCheck(e.target.checked, '토네이도', 1400, 0);
+            break;
+
+        case 'coke':
+            ConfCheck(e.target.checked, '콜라', 1200, 0);
+            break;
+
+        case 'cider':
+            ConfCheck(e.target.checked, '사이다', 1200, 0);
+            break;
+
+        case 'juice':
+            ConfCheck(e.target.checked, '오렌지쥬스', 1500, 0);
+            break;
     }
+}
 
-    // function resetRadioBT(){
-
-    //     if('input[type=radio]'.checked){
-    //         e.target.checked = false;
-    //     }
-    // }
 
 
 // Product 제품 연결해서 ProductList 배열에 삽입
@@ -71,14 +85,15 @@ function ConfCheck(checked, name, price, count) {
         newProduct.name = name;
         newProduct.price = price;
         newProduct.count = count;
-
+        console.log(count);
         // resultbt1.addEventListener(function counts(){
         //     resultbt1.addEventListener('click',counts) 
         // });
-
         ProductList = ProductList.concat(newProduct);
+
         //console.log(ProductList);
         //console.log(JSON.stringify(ProductList));
+
     } else {
         ProductList = ProductList.filter(function (product) {
             return product.name !== name;
@@ -88,19 +103,18 @@ function ConfCheck(checked, name, price, count) {
 }
 
 
-// 제품 갯수 설정
-function counts(type) {
-    
-    let resultElement = document.getElementById('countresult');
-    if (type == 'plus') {
-        Product.count = Product.count + 1;
-    } else if (type == 'minus') {
-        if (Product.count > 0) {
-            Product.count = Product.count - 1;
+    // 제품 갯수 설정
+    function counts(type) {
+        let resultElement = document.getElementById('countresult');
+        if (type == 'plus') {
+            Product.count += 1;
+        } else if (type == 'minus') {
+            if (Product.count > 0) {
+                Product.count -= 1;
+            }
         }
+        resultElement.innerText = Product.count;
     }
-    resultElement.innerText = Product.count;
-}
 
 
 
@@ -130,15 +144,13 @@ function select() {
 
 // 장바구니 담기
 function cart() {
-    if(product.count != 0){
-        select();
-        let chk = document.querySelectorAll("input[type='radio']");
-        chk.forEach(item => {
-            item.checked = false;
-        });
-    }else{
-        alert('개수를 선택해주세요.');
-    }
+    select();
+    let chk = document.querySelectorAll("input[type='radio']");
+    chk.forEach(item => {
+        Product.count = 0;
+        item.checked = false;
+        document.getElementById('countresult').innerText = '';
+    });
 }
 
 
