@@ -1,5 +1,4 @@
 label{
-    font-family: 'Black Han Sans', sans-serif;
     font-family: 'Sunflower', sans-serif;
     font-size: 16px;
 }
@@ -12,10 +11,20 @@ body {
     background-color: pink;
 }
 
-#slogan {
-    margin: 50px;
+#popup{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 30px;
+}
+
+#slogan{
     font-family: 'Black Han Sans', sans-serif;
     font-size: 40px;
+}
+
+h3{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 35px;
+    margin: 20px 0 20px 0;
 }
 
 #burger,
@@ -26,6 +35,7 @@ body {
 
 #content{
     font-size: 15px;
+    margin: auto;
 }
 
 #total{
@@ -37,7 +47,7 @@ body {
 }
 
 .button{
-    margin: 5px 0 5px 0;
+    margin: 20px 0 20px 0;
     padding: 10px 15px 10px 15px;
     background-color: white;
     border-style: none;
@@ -46,16 +56,15 @@ body {
 }
 
 .button:hover{
-    margin: 5px 0 5px 0;
+    margin: 20px 0 20px 0;
     padding: 10px 15px 10px 15px;
-    background-color:pink;
-    color:white;
+    background-color:black;
+    color:pink;
     border-style: solid;
-    border-color: white;
 }
 
 .plus, .minus{
-    margin: 15px 0 15px 0;
+    margin: 20px 0 20px 0;
     padding: 10px 15px 10px 15px;
     background-color: white;
     border-style: none;
@@ -64,7 +73,7 @@ body {
 }
 
 .plus:hover, .minus:hover{
-    margin: 15px 0 15px 0;
+    margin: 20px 0 20px 0;
     padding: 10px 15px 10px 15px;
     background-color:pink;
     color:white;
