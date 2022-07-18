@@ -59,15 +59,20 @@ body {
 ul.nav{    
     font-family: 'SBAggroL';
     position: absolute;
-    top: 640px;
-    left: 640px;
+    top: 625px;
+    left: 290px;
+}
+
+ul.nav> img{    
+    width: 4%;
+    display: inline-block;
 }
 
 li{
     list-style: none;
     display: inline;
     padding: 30px 15px 20px 15px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 li:hover{
@@ -186,7 +191,7 @@ input[type='radio']:checked{
 /* 버튼 전체 */
 #totalBT{
     position: absolute;
-    top: 1250px;
+    top: 1350px;
     left: 710px;
     padding-bottom: 80px;
 }
@@ -213,7 +218,7 @@ input[type='radio']:checked{
     border-radius:100px;
     color: palevioletred;
     position: absolute;
-    top: 700px;
+    top: 1230px;
     left: 900px;
 }
 
@@ -224,6 +229,6 @@ input[type='radio']:checked{
     border-style: solid;
     border-color: white;
     position: absolute;
-    top: 700px;
+    top: 1230px;
     left: 800px;
 }
