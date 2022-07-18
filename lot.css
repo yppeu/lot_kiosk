@@ -1,41 +1,147 @@
-label{
-    font-family: 'Sunflower', sans-serif;
-    font-size: 16px;
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SBAggroL';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 
 body {
+    width: 100%;
     text-align: center;
-    margin: 100px;
-    font-size: x-large;
-    background-color: pink;
+    background-color:#fdeceb;
 }
 
-#popup{
-    font-family: 'Black Han Sans', sans-serif;
-    font-size: 30px;
-}
-
+/* 버거킹로고 */
 #slogan{
-    font-family: 'Black Han Sans', sans-serif;
-    font-size: 40px;
+    font-family: 'SBAggroB';
+    font-size: 90px;
+    color: lightpink;
+    position: relative;
+    top: 100px;
+    bottom: 100px;
+    letter-spacing:-5px;
 }
 
-h3{
-    font-family: 'Black Han Sans', sans-serif;
+/* nav 배경 */
+.navback{
+    position: absolute;
+    top: 290px;
+    left: 580px;
+    border-radius:100px;
+    border: 0.1em solid white;
+    width: 33%;
+    height: 10%;
+    border-color:lightpink;
+    background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+/* ul태그 */
+ul.nav{    
+    font-family: 'SBAggroL';
+    position: absolute;
+    top: 310px;
+    left: 650px;
+}
+
+li{
+    list-style: none;
+    display: inline;
+    padding: 30px 15px 20px 15px;
+    font-size: 20px;
+}
+
+li:hover{
+    font-family: 'SBAggroB';
+    cursor:pointer;
+    color: lightpink;
+}
+
+/* label text 메뉴들 */
+label{
+    width: 100%;
+    font-family: 'SBAggroL';
+    font-size: 18px;
+}
+
+label:hover{
+    padding: 2%;
+    font-size: 18px;
+    text-align: center;
+    cursor:pointer;
+    background-color: lightpink;
+    color: white;
+}
+
+input[type='radio']{
+    display: none;
+}
+
+input[type='radio']:checked{
+    display: none;
+    border:1px solid lightpink;
+    text-align: center;
+    background-color: lightpink;
+    color: white;
+}
+
+#warp{
+    width: 100%;
+}
+
+/* 버거메뉴 */
+#burger{
+    font-family: 'SBAggroL';
     font-size: 35px;
-    margin: 20px 0 20px 0;
+    position: absolute;
+    top: 650px;
+    left: 55px;
+    width: 100%;
 }
 
-#burger,
-#snack,
+#burger > label{
+    margin-right: 60px;
+}
+
+/* 스낵메뉴 */
+#snack{
+    display: none;
+    font-family: 'SBAggroL';
+    font-size: 35px;
+    position: absolute;
+    top: 550px;
+    left: 60px;
+    width: 100%;
+}
+
+#snack > label{
+    margin-right: 60px;
+}
+
+/* 음료메뉴 */
 #drink {
-    margin: 15px;
+    display: none;
+    font-family: 'SBAggroL';
+    font-size: 35px;
+    position: absolute;
+    top: 650px;
+    left: 60px;
+    width: 100%;
+}
+
+#drink>label{
+    margin-right: 60px;
 }
 
 #content{
     font-size: 15px;
-    margin: auto;
 }
 
 #total{
@@ -46,9 +152,14 @@ h3{
     display: none;
 }
 
+#totalBT{
+    position: absolute;
+    top: 800px;
+    left: 710px;
+}
+
 .button{
-    margin: 20px 0 20px 0;
-    padding: 10px 15px 10px 15px;
+    padding: 15px 25px 15px 25px;
     background-color: white;
     border-style: none;
     border-radius:100px;
@@ -56,27 +167,30 @@ h3{
 }
 
 .button:hover{
-    margin: 20px 0 20px 0;
-    padding: 10px 15px 10px 15px;
+    padding: 15px 25px 15px 25px;
     background-color:black;
     color:pink;
     border-style: solid;
 }
 
 .plus, .minus{
-    margin: 20px 0 20px 0;
     padding: 10px 15px 10px 15px;
     background-color: white;
     border-style: none;
     border-radius:100px;
     color: palevioletred;
+    position: absolute;
+    top: 700px;
+    left: 900px;
 }
 
 .plus:hover, .minus:hover{
-    margin: 20px 0 20px 0;
     padding: 10px 15px 10px 15px;
     background-color:pink;
     color:white;
     border-style: solid;
     border-color: white;
+    position: absolute;
+    top: 700px;
+    left: 800px;
 }
