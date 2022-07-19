@@ -12,9 +12,9 @@
     font-style: normal;
 }
 
-
 body {
-    width: 100%;
+    position: relative;
+    max-width: 1024px;
     text-align: center;
     background-color:#fdeceb;
     background: linear-gradient(90deg, #fdeceb 19px, transparent 1%) center, linear-gradient(#fdeceb 19px, transparent 1%) center, white;
@@ -22,57 +22,72 @@ body {
 }
 
 
-/* 버거킹로고 */
+/* 메인 컨테이너 */
+.main-container{
+    width:50vw;
+    height:160vh;
+    background-color: white;
+    position: absolute;
+    top:150px;
+    left: 400px;
+    border-radius:100px;
+    border: 0.1em solid lightpink;
+    background-color: rgba( 255, 255, 255, 0.4 );
+    
+}
+
+
+/* 버거로고 */
 #slogan{
     font-family: 'SBAggroB';
-    font-size: 90px;
+    position: absolute;
+    font-size: 100px;
     color: lightpink;
-    position: relative;
-    top: 100px;
-    bottom: 100px;
+    top: 120px;
+    left: 200px;
     letter-spacing:-5px;
     line-height:100%;
 }
 
+/* 로고 밑 이미지 */
 #slogan>img{
-    display: block;
     position: absolute;
-    width: 26%;
-    top: 125px;
-    left: 620px;
+    width: 80%;
+    top: 65px;
+    left:25px;
 }
 
 /* nav 배경 */
 .navback{
     position: absolute;
-    top: 620px;
-    left: 580px;
+    width: 60%;
+    top: 530px;
+    left: 170px;
     border-radius:100px;
     border: 0.1em solid white;
-    width: 33%;
-    height: 10%;
+    height: 6.5%;
     border-color:lightpink;
     background-color: rgba( 255, 255, 255, 0.5 );
 }
 
 /* ul태그 */
-ul.nav{    
+.nav{    
+    width: 100%;
     font-family: 'SBAggroL';
     position: absolute;
-    top: 625px;
-    left: 290px;
+    top: 545px;
+    left: -25px;
 }
 
-ul.nav> img{    
+.nav> img{    
     width: 4%;
-    display: inline-block;
 }
 
 li{
+    display: inline-block;
     list-style: none;
-    display: inline;
-    padding: 30px 15px 20px 15px;
-    font-size: 18px;
+    font-size: 16px;
+    padding-right: 2%;
 }
 
 li:hover{
@@ -80,30 +95,12 @@ li:hover{
     cursor:pointer;
 }
 
-/* label text 메뉴들 */
-label{
-    display: block;
-    font-family: 'SBAggroB';
-    font-size: 18px;
-    background-color: white;
-    padding: 2em 2em;
-    width: 18%;
-}
-
-
-label:hover{
-    padding: 2em 2em;
-    font-size: 18px;
-    text-align: center;
-    cursor:pointer;
-    background-color: lightpink;
-    color: white;
-}
-
+/* 라디오 버튼 보여지는 여부 */
 input[type='radio']{
     display: none;
 }
 
+/* 라디오 버튼 체크 후 옵션 */
 input[type='radio']:checked{
     display: none;
     text-align: center;
@@ -111,32 +108,163 @@ input[type='radio']:checked{
     color: white;
 }
 
-/* 메뉴 */
-#subwarp{
+/* 제품 메뉴 */
+.subwarp{
     width: 100%;
+    position: absolute;
+    left:30px;
 }
 
-/* 버거메뉴 */
-#burger{
-    font-family: 'SBAggroL';
-    font-size: 35px;
+/* 버거메뉴 시작 */
+/* 불고기버거 시작 */
+.burger>.bul{
+    width: 50%;
     position: absolute;
-    top: 650px;
-    left: 55px;
-    width: 100%;
+    top:670px;
 }
 
-#burger > label{
+.burger>.bul>img{
+    width: 50%;
     position: absolute;
-    top: 400px;
-    left: 300px;
+    left: 150px;
 }
 
-#burger>img{
+.burger>.bul>label{
+    font-family: 'SBAggroB';
+    font-size: 16px;
+    background-color: white;
+    padding: 2em 2em;
     position: absolute;
-    top: 130px;
-    left: 300px;
+    top: 150px;
+    left: 160px;
 }
+
+.burger>.bul>label:hover{
+    font-family: 'SBAggroB';
+    font-size: 16px;
+    background-color: lightpink;
+    color: white;
+    padding: 2em 2em;
+    position: absolute;
+    top: 150px;
+    left: 160px;
+}
+/* 불고기버거 끝 */
+
+
+/* 새우버거 시작 */
+.burger>.shrimp{
+    width: 50%;
+    position: absolute;
+    top:670px;
+}
+
+.burger>.shrimp>img{
+    position: absolute;
+    width: 53%;
+    top: -65px;
+    left: 460px;
+}
+
+.burger>.shrimp>label{
+    font-family: 'SBAggroB';
+    font-size: 16px;
+    background-color: white;
+    padding: 2em 2em;
+    position: absolute;
+    top: 150px;
+    left: 470px;
+}
+
+.burger>.shrimp>label:hover{
+    font-family: 'SBAggroB';
+    font-size: 16px;
+    background-color: lightpink;
+    color: white;
+    padding: 2em 2em;
+    position: absolute;
+    top: 150px;
+    left: 470px;
+}
+/* 새우버거 끝 */
+
+
+
+/* 치킨버거 시작 */
+.burger>.chicken{
+    width: 50%;
+    position: absolute;
+    top:1000px;
+}
+
+.burger>.chicken>img{
+    position: absolute;
+    width: 50%;
+    top: -70px;
+    left: 140px;
+}
+
+.burger>.chicken>label{
+    font-family: 'SBAggroB';
+    font-size: 16px;
+    background-color: white;
+    padding: 2em 2em;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
+.burger>.chicken>label:hover{
+    font-family: 'SBAggroB';
+    font-size: 16px;
+    background-color: lightpink;
+    color: white;
+    padding: 2em 2em;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+/* 치킨버거 끝 */
+
+
+/* 치즈버거 시작 */
+.burger>.basiccheese{
+    width: 50%;
+    position: absolute;
+    top:1000px;
+}
+
+.burger>.basiccheese>img{
+    position: absolute;
+    width: 63%;
+    top: -45px;
+    left: 430px;
+}
+
+.burger>.basiccheese>label{
+    font-family: 'SBAggroB';
+    font-size: 16px;
+    background-color: white;
+    padding: 2em 2em;
+    position: absolute;
+    top: 150px;
+    left: 470px;
+}
+
+.burger>.basiccheese>label:hover{
+    font-family: 'SBAggroB';
+    font-size: 16px;
+    background-color: lightpink;
+    color: white;
+    padding: 2em 2em;
+    position: absolute;
+    top: 150px;
+    left: 470px;
+}
+/* 치즈버거 끝 */
+/* 버거메뉴 끝 */
+
+
 
 /* 스낵메뉴 */
 #snack{
@@ -147,18 +275,21 @@ input[type='radio']:checked{
     top: 550px;
     left: 60px;
     width: 100%;
+    
 }
 
 #snack > label{
     position: absolute;
     top: 1000px;
     left: 300px;
+    
 }
 
 #snack>img{
     position: absolute;
     top: 130px;
     left: 300px;
+    
 }
 
 /* 음료메뉴 */
@@ -176,7 +307,69 @@ input[type='radio']:checked{
     margin-right: 60px;
 }
 
+
+/* +,- 버튼 유무 */
+#disBT{
+    display: none;
+    position: absolute;
+    top: 1340px;
+    left: 70px;
+}
+
+/* +,- 버튼 디자인 */
+.plus {
+    padding: 10px 15px 10px 15px;
+    background-color: white;
+    border-style: none;
+    border-radius:100px;
+    color: palevioletred;
+    position: absolute;
+    left: 300px;
+}
+
+.minus{
+    padding: 10px 15px 10px 15px;
+    background-color: white;
+    border-style: none;
+    border-radius:100px;
+    color: palevioletred;
+    position: absolute;
+    left: 400px;
+}
+
+.plus:hover{
+    padding: 10px 15px 10px 15px;
+    background-color:pink;
+    color:white;
+    border-style: solid;
+    border-color: white;
+    position: absolute;
+    left: 300px;
+}
+
+.minus:hover{
+    padding: 10px 15px 10px 15px;
+    background-color:pink;
+    color:white;
+    border-style: solid;
+    border-color: white;
+    position: absolute;
+    left: 400px;
+}
+
+
+/* 갯수 결과값 */
+#countresult{
+    font-family: 'SBAggroB';
+    font-size: 30px;
+    position: absolute;
+    top: 1280px;
+    left: 430px;
+}
+
+/* 제품 선택 출력 내용 */
 #content{
+    font-family: 'SBAggroB';
     font-size: 15px;
 }
 
@@ -184,51 +377,33 @@ input[type='radio']:checked{
     margin: 10px;
 }
 
-#plusminBT{
-    display: none;
-}
 
-/* 버튼 전체 */
-#totalBT{
+/* 담기, 결제, 취소 버튼 */
+.totalBT{
+    width: 100%;
     position: absolute;
-    top: 1350px;
-    left: 710px;
-    padding-bottom: 80px;
+    top: 1400px;
+    left: 0;    
 }
 
-.button{
+.totalBT>.button{
+    font-family: 'SBAggroB';
+    display: inline;
     padding: 15px 25px 15px 25px;
     background-color: white;
     border-style: none;
     border-radius:100px;
     color: palevioletred;
+    border-radius:100px;
+    border: 0.1em solid lightpink;
+    font-size: 16px;
 }
 
-.button:hover{
+.totalBT>.button:hover{
     padding: 15px 25px 15px 25px;
     background-color:black;
-    color:pink;
-    border-style: solid;
-}
-
-.plus, .minus{
-    padding: 10px 15px 10px 15px;
-    background-color: white;
-    border-style: none;
-    border-radius:100px;
-    color: palevioletred;
-    position: absolute;
-    top: 1230px;
-    left: 900px;
-}
-
-.plus:hover, .minus:hover{
-    padding: 10px 15px 10px 15px;
-    background-color:pink;
     color:white;
     border-style: solid;
-    border-color: white;
-    position: absolute;
-    top: 1230px;
-    left: 800px;
+    border-radius:100px;
+    border: 0.1em solid white;
 }
