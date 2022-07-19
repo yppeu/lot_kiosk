@@ -1,20 +1,18 @@
 
 // 로고 타이핑 효과
-const content = "고객님 환영합니다!";
-const text = document.querySelector("#popup");
-text.style.margin = '0 50px 50px 50px';
-let index = 0;
+// const content = "고객님 환영합니다!";
+// const text = document.querySelector("#popup");
+// text.style.margin = '0 50px 50px 50px';
+// let index = 0;
 
-function typing() {
-    text.textContent = text.textContent + content[index++];
-    if (index > content.length) {
-        text.textContent = ""
-    }
-}
-setInterval(typing, 200);
-clearInterval(typing);
-
-
+// function typing() {
+//     text.textContent = text.textContent + content[index++];
+//     if (index > content.length) {
+//         text.textContent = ""
+//     }
+// }
+// setInterval(typing, 200);
+// clearInterval(typing);
 
 // 물품 - (버거,스낵,음료)이름, 가격 -> 오브젝트 생성
 var Product = {
@@ -34,20 +32,24 @@ var CartSubmit = [];
 // 체크박스 체크 시, productList에 데이터 추가, 또는 삭제
 function getradioValue(e) {
     // 개수를 선택하기 위해 카운트 버튼 표시 처리
-    document.getElementById('plusminBT').style.display = 'block';
+    document.getElementById('disBT').style.display = 'block';
     document.getElementById('countresult').innerText = Number(0);
     Product.count = 0;
     switch (e.target.id) {
         case 'bul':
-            ConfCheck(e.target.checked, '불고기버거', 2000, 0);
+            ConfCheck(e.target.checked, '직화소불고기버거', 7000, 0);
             break;
 
         case 'shrimp':
-            ConfCheck(e.target.checked, '새우버거', 2000, 0);
+            ConfCheck(e.target.checked, '통새우슈림프버거', 8000, 0);
             break;
 
-        case 'cow':
-            ConfCheck(e.target.checked, '한우버거', 6500, 0);
+        case 'chicken':
+            ConfCheck(e.target.checked, '칠리치킨버거', 6500, 0);
+            break;
+
+        case 'basiccheese':
+            ConfCheck(e.target.checked, '베이직치즈버거', 5500, 0);
             break;
 
         case 'cheese':
@@ -86,14 +88,7 @@ function ConfCheck(checked, name, price, count) {
         newProduct.price = price;
         newProduct.count = count;
         console.log(count);
-        // resultbt1.addEventListener(function counts(){
-        //     resultbt1.addEventListener('click',counts) 
-        // });
         ProductList = ProductList.concat(newProduct);
-
-        //console.log(ProductList);
-        //console.log(JSON.stringify(ProductList));
-
     } else {
         ProductList = ProductList.filter(function (product) {
             return product.name !== name;
