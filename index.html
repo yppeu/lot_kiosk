@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버거킹</title>
+    <link rel="stylesheet" href="lot.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+    <div class="main-container">
+        <!-- 버거킹 로고 시작 -->
+        <div id='slogan'>BURGER
+            <img src="./img/mainburger.png" alt="메인버거">
+        </div>
+        <!-- 버거킹 로고 끝 -->
+
+        <!-- 메뉴 뒷 배경 시작 -->
+        <div class="navback"></div>
+
+        <!-- 메뉴 시작 -->
+        <div>
+            <ul class="nav">
+                <img src="./img/burger_icon.png" alt="">
+                <li>BURGERS</li>
+
+                <img src="./img/drink_icon.png" alt="">
+                <li>SNACK</li>
+
+                <img src="./img/snack_icon.png" alt="">
+                <li>DRINK</li>
+            </ul>
+        </div>
+        <!-- 메뉴 끝 -->
+
+        <!-- 메뉴 리스트 시작 -->
+        <div class="subwarp">
+            <!-- 버거 리스트 시작 -->
+            <div class='burger'>
+                <div class='bul'>
+                    <input id='bul' type='radio' onchange='getradioValue(event)' name='burger' />
+                    <img src="img/cowburger.png" alt="직화소불고기버거">
+                    <label for="bul">cowburger</label>
+                </div>
+                <div class='shrimp'>
+                    <input id='shrimp' type='radio' onchange='getradioValue(event)' name='burger' />
+                    <img src="img/shrimpburger.png" alt="통새우슈림프버거">
+                    <label for="shrimp">shrimpburger</label>
+                </div>
+                <div class='chicken'>
+                    <input id='chicken' type='radio' onchange='getradioValue(event)' name='burger' />
+                    <img src="img/chickenburger.png" alt="칠리치킨버거">
+                    <label for="chicken">chickenburger</label>
+                </div>  
+                <div class='basiccheese'>
+                    <input id='basiccheese' type='radio' onchange='getradioValue(event)' name='burger' />
+                    <img src="img/cheeseburger.png" alt="베이직치즈버거">
+                    <label for="basiccheese">cheeseburger</label>
+                </div>  
+            </div>
+            <!-- 버거 리스트 끝 -->
+
+            <!-- 스낵 리스트 시작 -->
+            <div id='snack'>
+                <input id='cheese' type='radio' onchange='getradioValue(event)' name='snack' />
+                <label for="cheese">치즈스틱</label>
+
+                <input id='potato' type='radio' onchange='getradioValue(event)' name='snack' />
+                <label for="potato">양념감자</label>
+
+                <input id='tornado' type='radio' onchange='getradioValue(event)' name='snack' />
+                <label for="tornado">토네이도</label>
+            </div>
+            <!-- 스낵 리스트 끝 -->
+
+            <!-- 음료 리스트 시작 -->
+            <div id='drink'>
+                <input id='coke' type='radio' onchange='getradioValue(event)' name='drink' />
+                <label for="coke">콜라</label>
+
+                <input id='cider' type='radio' onchange='getradioValue(event)' name='drink' />
+                <label for="cider">사이다</label>
+
+                <input id='juice' type='radio' onchange='getradioValue(event)' name='drink' />
+                <label for="juice">오렌지쥬스</label>
+            </div>
+            <!-- 음료 리스트 끝 -->
+        </div>
+        <!-- 메뉴 리스트 끝 -->
+
+        <!-- 갯수 선택 버튼 시작 -->
+        <div id="disBT">
+            <input class="plus" type='button' onclick='counts("plus")' value='+' />
+            <input class="minus" type='button' onclick='counts("minus")' value='-' />
+        </div>
+
+        <!-- 제품 갯수 결과값 -->
+        <div id='countresult'></div>
+
+        <!-- 담기, 결제, 취소 버튼 -->
+        <div class="totalBT">
+            <input class="button" id='cart' type='button' value='장바구니 담기' onclick="cart()" />
+            <input class="button" id='pay' type='button' value='결제' onclick="pay()" />
+            <input class="button" id='cancle' type='button' value='취소' onclick="cancle()" />
+        </div>
+
+        
+        <div id='total'></div>
+
+        <!-- 제품 선택 내용 -->
+        <div id='content'></div>
+
+        <!-- 외부 자바스크립트 -->
+        <script src="lot.js" charset="utf-8"></script>
+    </div>
+
+</body>
+
+
+</html>
 
